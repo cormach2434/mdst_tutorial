@@ -17,20 +17,29 @@ Once you are finished with this program, you should run `python preprocess.py` f
 This should load the data, perform preprocessing, and save the output to the data folder.
 
 """
+import pandas as pd
 
 def remove_percents(df, col):
+    df = df[-1:]
+    col = np.array(col)
     return df
 
 def fill_zero_iron(df):
+    df.append(0)
     return df
     
 def fix_caffeine(df):
+    if df = 0 or df = "varies":
+    df = df.mean()
     return df
 
 def standardize_names(df):
+    df.lower()
     return df
 
 def fix_strings(df, col):
+    df.lower()
+    df = np.array(col)
     return df
 
 
@@ -44,6 +53,7 @@ def main():
     pct_DV = ['Vitamin A (% DV)', 'Vitamin C (% DV)', 'Calcium (% DV)', 'Iron (% DV)']
     for col in pct_DV:
         df = remove_percents(df, col)
+        
     
     # the column 'Iron (% DV)' has missing values when the drink has no iron
     # complete the fill_zero_iron function to fix this
